@@ -1,0 +1,9 @@
+server:
+  port: 85
+
+spring:
+  application:
+    name: feign-server
+feign:
+  hystrix:
+    enabled: true

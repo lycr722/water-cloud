@@ -1,0 +1,12 @@
+# Project exclude paths
+/building-server/target/
+/common/target/
+/eureka-server/target/
+/eureka-server-ha/target/
+/feign-api/target/
+/gateway-server/target/
+/hystrix-dashboard/target/
+/nacos-config/target/
+/order-server/target/
+/user-server/target/
+/worker-server/target/

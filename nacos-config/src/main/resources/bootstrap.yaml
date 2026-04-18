@@ -1,0 +1,26 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:80
+        file-extension: yaml
+        namespace: feeae11e-87c6-4509-8e77-68dc3ba1bb61
+        group: CONFIG_GROUP
+
+# dataid的组成格式及与SpringBoot配置文件中的匹配规则
+# ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+# prefix 默认为 spring.application.name 的值
+# spring.profile.active 即为当前环境对应的 profile，可以通过配置项 spring.profile.active 来配置。
+# file-exetension 为配置内容的数据格式，可以通过配置项 spring.cloud.nacos.config.file-extension 来配置
+
+
+#三层命名：Namespace=public(最外层的namespace是可以用于区分部署环境的)，
+#        Group=DEFAULT_GROUP(Group可以把不同的微服务划分到同一个分组里面去)
+#        DataId(Group和DataID逻辑上区分两个目标对象)
+#
+#Service就是微服务；一个Service可以包含多个Cluster（集群），Nacos默认Cluster是DEFAULT，Cluster是对指定微服务的一个虚拟划分。
+#最后是Instance，就是微服务的实例。

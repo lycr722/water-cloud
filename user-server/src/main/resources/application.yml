@@ -1,0 +1,27 @@
+server:
+  port: 82
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-gw0l3r8gekk6dhd4beo.mysql.cn-chengdu.rds.aliyuncs.com:3306/water_order?serverTimezone=GMT%2B8&useSSL=true
+    username: user3
+    password: Student@
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://peer1:8081/eureka,http://peer2:8082/eureka/
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+#wx:
+#  appId: "wxe5b4ce78470c5cfc"  #小程序appId
+#  secret: "fa8ab0823086a2aeca13d3d9d5f45bef"  #小程序密钥

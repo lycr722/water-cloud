@@ -1,0 +1,18 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: peer2
+  application:
+    name: eureka-server
+
+               # 指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8081/eureka/
+

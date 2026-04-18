@@ -1,0 +1,23 @@
+server:
+  port: 9600
+
+spring:
+  application:
+    name: cache-sync-server
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+cache-sync:
+  binlog:
+    enabled: false
+    host: 127.0.0.1
+    port: 3306
+    username: repl
+    password: repl
+    server-id: 54001
+  rabbit:
+    invalidate-exchange: cache.invalidate.exchange
+    invalidate-routing-key: cache.invalidate

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:80
+        file-extension: yaml
+        namespace: feeae11e-87c6-4509-8e77-68dc3ba1bb61
+        refresh-enabled: true

@@ -1,0 +1,43 @@
+server:
+  port: 83
+spring:
+  application:
+    name: worker-server
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-gw0l3r8gekk6dhd4beo.mysql.cn-chengdu.rds.aliyuncs.com:3306/water_order?serverTimezone=GMT%2B8&useSSL=true
+    username: user3
+    password: Student@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:80
+        cluster-name: KM
+        namespace: feeae11e-87c6-4509-8e77-68dc3ba1bb61
+        # 要调用的微服务必须在同一个命名空间
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://peer1:8081/eureka,http://peer2:8082/eureka/
+
+feign:
+  client:
+    config:
+      default: # default全局的配置
+        loggerLevel: BASIC # 日志级别，BASIC就是基本的请求和响应信息
+  httpclient:
+    enabled: true # 开启feign对HttpClient的支持
+    max-connections: 200 # 最大的连接数
+    max-connections-per-route: 50 # 每个路径的最大连接数
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
+
